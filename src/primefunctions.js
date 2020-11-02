@@ -1,3 +1,10 @@
+/*
+Name: Chase Jamieson
+Assignment: CS320 HW4
+
+primeGen(n) is given a thresh hold and
+returns an array of primes up to inputted number.
+ */
 function primeGen(threshhold) {
   const values = [];
   const upper = Math.sqrt(threshhold);
@@ -6,18 +13,18 @@ function primeGen(threshhold) {
   let i;
   let j;
   for (i = 0; i < threshhold; i++) {
-    values.push(true);
+    values.push(true); // initializing the array true
   }
 
   for (i = 2; i <= upper; i++) {
     for (j = i * i; j < threshhold; j += i) {
-      values[j] = false;
+      values[j] = false; // values with multiples set to false
     }
   }
 
   for (i = 2; i < threshhold; i++) {
     if (values[i]) {
-      output.push(i);
+      output.push(i); // create and return new array with just true primes
     }
   }
 
